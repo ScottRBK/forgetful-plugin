@@ -2,11 +2,12 @@
 
 This plugin integrates [Forgetful AI Memory](https://github.com/ScottRBK/forgetful) with Claude Code - a semantic memory system using Zettelkasten principles.
 
-## Quick Start
+## Quick Start - Inside of Claude Code Session
 
 1. Install the plugin:
 ```bash
 /plugin marketplace add ScottRBK/forgetful-plugin
+/plugin install forgetful-plugin@forgetful-plugin
 ```
 
 2. Run setup:
