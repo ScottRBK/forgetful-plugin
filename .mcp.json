@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "forgetful": {
+      "command": "uvx",
+      "args": ["forgetful-ai"]
+    }
+  }
+}

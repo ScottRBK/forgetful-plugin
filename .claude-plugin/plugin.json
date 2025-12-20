@@ -1,0 +1,11 @@
+{
+"name": "forgetful-plugin",
+"description": "Plugin for the forgetful Agentic AI memory mcp solution",
+"version": "1.0.0",
+"author": {
+"name": "Scott Raisbeck",
+"url": "https://github.com/ScottRBK"
+},
+"license": "MIT",
+"repository": "https://github.com/ScottRBK/forgetful-plugin"
+}
