@@ -1,0 +1,22 @@
+{
+  "name": "forgetful-plugins",
+  "owner": {
+    "name": "Scott Raisbeck",
+    "email": "scott@raisbeck.me"
+  },
+  "plugins": [
+    {
+      "name": "forgetful-plugin",
+      "source": ".",
+      "description": "Semantic memory for Claude Code using Zettelkasten principles",
+      "version": "1.0.0",
+      "author": {
+        "name": "Scott Raisbeck"
+      },
+      "repository": "https://github.com/ScottRBK/forgetful-plugin",
+      "license": "MIT",
+      "keywords": ["memory", "zettelkasten", "mcp", "forgetful", "knowledge-base"],
+      "category": "productivity"
+    }
+  ]
+}

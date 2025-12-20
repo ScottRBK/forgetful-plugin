@@ -1,19 +1,26 @@
 ![Forgetful Claude Code Plugin](/hero_banner.png)
 
-This repository contains the configuration neccessary to install a [Claude Code Plugin](https://code.claude.com/docs/en/plugins-reference#plugin-manifest-schema) for the [Forgetful AI Memory MCP](https://github.com/ScottRBK/forgetful). 
+This plugin integrates [Forgetful AI Memory](https://github.com/ScottRBK/forgetful) with Claude Code - a semantic memory system using Zettelkasten principles.
 
+## Quick Start
 
-## MCP
-
-Ships with STDIO transport however if you are calling Forgetful via HTTP then you must change the `.mcp.json` file to ensure it connects to the correct version of forgetful.
-
-```json
-{
-  "mcpServers": {
-    "forgetful": {
-      "type": "http",
-      "url": "http://localhost:8020/mcp"
-    }
-  }
-}
+```bash
+/plugin marketplace add ScottRBK/forgetful-plugin
+/plugin install forgetful-plugin@forgetful-plugins
+cd ~/.claude/plugins/forgetful-plugin
+cp .mcp.json.stdio.example .mcp.json
 ```
+
+Configure MCP as per the [Forgetful Configuration](https://github.com/ScottRBK/forgetful/blob/main/docs/configuration.md).
+
+## What's Included
+
+**Commands:**
+- `/memory-search` - Semantic search across memories
+- `/memory-save` - Create atomic memories with curation
+- `/memory-list` - Browse recent memories
+- `/encode-repo` - Bootstrap a repository into the knowledge base
+
+**Skills:**
+- `using-forgetful-memory` - Guidance on when to query vs create, atomic memory principles
+- `curating-memories` - Workflows for updating, linking, and marking memories obsolete

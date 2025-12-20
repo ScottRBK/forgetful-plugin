@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "forgetful": {
+      "type": "http",
+      "url": "http://localhost:8020/mcp"
+    }
+  }
+}
