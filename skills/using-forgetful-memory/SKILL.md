@@ -65,6 +65,27 @@ Each memory must pass the atomicity test:
 | 6-7 | Milestones, specific solutions |
 | 5-6 | Minor context (use sparingly) |
 
+## Project Discovery
+
+Before creating memories, find the correct project:
+
+1. **Get current repo** - Check the git remote:
+   ```bash
+   git remote get-url origin
+   ```
+   Extract the repo identifier (e.g., `ScottRBK/forgetful-plugin`)
+
+2. **Search by repo** - Filter projects directly:
+   ```
+   execute_forgetful_tool("list_projects", {"repo_name": "owner/repo"})
+   ```
+
+3. **Use the project_id** - Never assume project 1 - always discover first
+
+If no project exists for the current repo:
+- Ask user if they want to create one (with `repo_name` set)
+- Or scope the memory without a project_id (global memory)
+
 ## Query Before Create
 
 Always check for existing memories before creating:
