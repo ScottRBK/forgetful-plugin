@@ -22,6 +22,22 @@ Use `execute_forgetful_tool("query_memory", {...})` with:
 - `query_context`: Why you're searching (improves ranking)
 - `include_links`: true (to see connected knowledge)
 
+### Getting Recent Memories for a Project
+
+To see what's been recorded recently for a specific project:
+
+```
+execute_forgetful_tool("get_recent_memories", {
+  "limit": 10,
+  "project_ids": [PROJECT_ID]
+})
+```
+
+This is useful when:
+- Starting a session on a project you haven't worked on recently
+- Reviewing what was captured in previous conversations
+- Getting a quick overview of project knowledge
+
 ## When to Create Memory
 
 Create memories for knowledge worth preserving:
@@ -127,3 +143,44 @@ If content exceeds 2000 chars:
 3. Link memories to document via `document_ids`
 
 Example: Architecture overview (document) → separate memories for each layer/decision.
+
+---
+
+## Tool Quick Reference
+
+Common tools you can call directly via `execute_forgetful_tool(tool_name, args)`:
+
+### Memory Tools
+| Tool | Required Params | Description |
+|------|-----------------|-------------|
+| `query_memory` | `query`, `query_context` | Semantic search |
+| `create_memory` | `title`, `content`, `context`, `keywords`, `tags`, `importance` | Store atomic memory |
+| `get_memory` | `memory_id` | Get full memory details |
+| `update_memory` | `memory_id` | PATCH update fields |
+| `link_memories` | `memory_id`, `related_ids` | Manual bidirectional linking |
+| `mark_memory_obsolete` | `memory_id`, `reason` | Soft delete with audit |
+| `get_recent_memories` | (none) | Recent memories list |
+
+### Project Tools
+| Tool | Required Params | Description |
+|------|-----------------|-------------|
+| `list_projects` | (none) | List all projects |
+| `create_project` | `name`, `description`, `project_type` | Create project container |
+| `get_project` | `project_id` | Get project details |
+
+### Entity Tools
+| Tool | Required Params | Description |
+|------|-----------------|-------------|
+| `create_entity` | `name`, `entity_type` | Create org/person/device |
+| `search_entities` | `query` | Text search by name/aka |
+| `link_entity_to_memory` | `entity_id`, `memory_id` | Link entity↔memory |
+| `get_entity_memories` | `entity_id` | All memories for entity |
+| `create_entity_relationship` | `source_entity_id`, `target_entity_id`, `relationship_type` | Knowledge graph edge |
+
+### Document & Code Artifact Tools
+| Tool | Required Params | Description |
+|------|-----------------|-------------|
+| `create_document` | `title`, `description`, `content` | Long-form content |
+| `create_code_artifact` | `title`, `description`, `code`, `language` | Reusable code |
+
+**Full schemas**: See [TOOL_REFERENCE.md](TOOL_REFERENCE.md) for complete parameter details and examples.

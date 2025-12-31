@@ -32,7 +32,7 @@ The setup command will configure Forgetful MCP in your global `~/.claude.json` -
 - `/encode-repo` - Bootstrap a repository into the knowledge base
 
 **Skills:**
-- `using-forgetful-memory` - Guidance on when to query vs create, atomic memory principles
+- `using-forgetful-memory` - Guidance on when to query vs create, atomic memory principles, **includes TOOL_REFERENCE.md with all 38 tool schemas**
 - `curating-memories` - Workflows for updating, linking, and marking memories obsolete
 - `exploring-knowledge-graph` - Deep graph traversal across memories, entities, and relationships
 
