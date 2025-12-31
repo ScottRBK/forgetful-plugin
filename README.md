@@ -35,3 +35,7 @@ The setup command will configure Forgetful MCP in your global `~/.claude.json` -
 - `using-forgetful-memory` - Guidance on when to query vs create, atomic memory principles
 - `curating-memories` - Workflows for updating, linking, and marking memories obsolete
 - `exploring-knowledge-graph` - Deep graph traversal across memories, entities, and relationships
+
+## Related Plugins
+
+**[context-hub-plugin](https://github.com/ScottRBK/context-hub-plugin)** - An opinionated approach to gathering context for development work, combining Forgetful, Serena, and Context7 MCP servers. If you want a batteries-included context retrieval workflow, check it out.

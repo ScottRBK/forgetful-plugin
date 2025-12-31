@@ -26,6 +26,30 @@
         "knowledge-base"
       ],
       "category": "productivity"
+    },
+    {
+      "name": "context-hub-plugin",
+      "source": {
+        "source": "github",
+        "repo": "ScottRBK/context-hub-plugin"
+      },
+      "description": "Unified context retrieval from Forgetful Memory, Context7 docs, and Serena symbol analysis",
+      "version": "1.0.0",
+      "author": {
+        "name": "Scott Raisbeck"
+      },
+      "repository": "https://github.com/ScottRBK/context-hub-plugin",
+      "license": "MIT",
+      "keywords": [
+        "context",
+        "memory",
+        "documentation",
+        "context7",
+        "serena",
+        "forgetful",
+        "code-analysis"
+      ],
+      "category": "productivity"
     }
   ]
 }
