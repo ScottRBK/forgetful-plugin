@@ -107,12 +107,35 @@ If the concept requires >2000 characters:
 2. Extract 3-5 atomic memories from it
 3. Link memories to the document via `document_ids`
 
+## Project Discovery (IMPORTANT)
+
+**Never assume project_id 1** - always discover the correct project first:
+
+```
+# 1. Get the current repo
+git remote get-url origin  # e.g., "git@github.com:owner/repo-name.git"
+
+# 2. Search for project by repo name
+execute_forgetful_tool("list_projects", {"repo_name": "owner/repo-name"})
+
+# 3. Use the discovered project_id, or omit if no matching project exists
+```
+
+If no project exists for the current repo, either:
+- Create the memory **without** a project_id (global memory)
+- Ask the user which project to associate with
+- Create a new project first if appropriate
+
 ## Example with Curation
 
 User: `/memory-save`
 
-You query existing memories, find related content, and propose:
+You first discover the project, query existing memories, find related content, and propose:
 ```
+Project discovery:
+- Repo: github.com/anthropics/claude-plugins
+- Found project: "Claude Plugins" (ID: 7)
+
 Found 2 related memories:
 - #89: "Plugin strategy: single plugin" (Importance: 7) - OUTDATED by this decision
 - #45: "MCP scope hierarchy" (Importance: 8) - Related context
@@ -127,7 +150,7 @@ Context: "Architecture decision for shipping Forgetful as a Claude Code plugin"
 Keywords: [claude-code, plugin, forgetful, mcp, architecture]
 Tags: [decision, architecture]
 Importance: 8 (major architectural decision)
-Project: My Project (ID: 1)
+Project: Claude Plugins (ID: 7)  <-- discovered, not assumed!
 
 Curation actions:
 - Mark #89 obsolete (superseded by new memory)
